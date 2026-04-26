@@ -1,0 +1,15 @@
+CREDITS ----
+
+Team: Emil Marchand, Darcy Mazloum, Felis MacLellan
+
+ASSETS ----
+
+PSX Shader:
+
+FleshThing: Emil
+
+Room walls, floor, and ceiling: Felis
+
+SOUND EFFECTS ---
+
+drink_slurp, explosion_large: https://ci.itch.io/400-sounds-pack
