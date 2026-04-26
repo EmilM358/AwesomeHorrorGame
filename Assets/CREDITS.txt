@@ -12,4 +12,4 @@ Room walls, floor, and ceiling: Felis
 
 SOUND EFFECTS ---
 
-drink_slurp, explosion_large, hydraulic down, hydraulic up: https://ci.itch.io/400-sounds-pack
+drink_slurp, explosion_large, hydraulic down, hydraulic up, squelching_1, squelching_2: https://ci.itch.io/400-sounds-pack
