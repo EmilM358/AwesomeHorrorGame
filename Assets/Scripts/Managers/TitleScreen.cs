@@ -12,7 +12,7 @@ public class TitleScreen : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.Instance.BufferSceneChange("GameScene");
     }
 
     public void Settings()
