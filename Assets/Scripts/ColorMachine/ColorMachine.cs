@@ -44,7 +44,7 @@ public class ColorMachine : MonoBehaviour
             else
             {
                 // try get flask component, add this color to it
-                // place it into the flask slot
+                // place it into the flask slotkjj
             }
         }
     }

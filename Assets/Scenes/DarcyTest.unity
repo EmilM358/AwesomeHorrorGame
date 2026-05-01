@@ -134,7 +134,8 @@ GameObject:
   - component: {fileID: 191913753}
   - component: {fileID: 191913752}
   - component: {fileID: 191913751}
-  m_Layer: 0
+  - component: {fileID: 191913754}
+  m_Layer: 6
   m_Name: ChangeColorButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,6 +228,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191913749}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &191913754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191913749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c16d3ee6b852c744909b68a94c84f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &435274549
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +556,7 @@ GameObject:
   - component: {fileID: 1150007162}
   - component: {fileID: 1150007161}
   - component: {fileID: 1150007160}
+  - component: {fileID: 1150007163}
   m_Layer: 0
   m_Name: Machine
   m_TagString: Untagged
@@ -636,6 +650,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150007158}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1150007163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150007158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8ddb615663ab14d96cc3b74bc931ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlaskOriginal: {fileID: 5483213490104806831, guid: db97ee1d027a3e34898e2d24caf3a93e,
+    type: 3}
+  cc1: {fileID: 191913754}
+  cc2: {fileID: 1949272287}
+  flaskSlot: {fileID: 1289178776}
+  OnButtonPressed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1289178774
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +761,8 @@ GameObject:
   - component: {fileID: 1949272286}
   - component: {fileID: 1949272285}
   - component: {fileID: 1949272284}
-  m_Layer: 0
+  - component: {fileID: 1949272287}
+  m_Layer: 6
   m_Name: ChangeColorButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,6 +855,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949272282}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1949272287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949272282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c16d3ee6b852c744909b68a94c84f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

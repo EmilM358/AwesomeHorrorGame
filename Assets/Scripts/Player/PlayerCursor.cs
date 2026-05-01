@@ -22,17 +22,15 @@ public class PlayerCursor : MonoBehaviour
 
     private void Update()
     {
-        // This is apparently the mouse pos in pixels and not world coords...
-        // Gotta translate that
-        // There's a line for that in that website
+        // On every frame, get the position of the mouse and translate it to world coords.
+        // The actual position obtained is relative to the camera frustum's near clip plane.
+        // Imagine a pyramid with no point at the top. Two flat parallel surfaces on the top and bottom.
+        // That, is a frustum. The shape itself.
+        // The camera has a frustum. That is, the view of the camera is a frustum. Select the camera in unity, you will see the camera's frustum.
+        // The near clipping plane is the smaller face of the frustum, that being the face closest to the camera.
         MousePos = Mouse.current.position.ReadValue();
         MousePos.z = Camera.main.nearClipPlane;
         MouseWorldPos = Camera.main.ScreenToWorldPoint(MousePos);
-
-
-        //Debug.Log("Update MousePos: " + MousePos + " MouseWorldPos: " + MouseWorldPos);
-
-
     }
 
     private void OnEnable()
@@ -52,21 +50,29 @@ public class PlayerCursor : MonoBehaviour
         if (context.performed)
         {
             
-
             Debug.Log("Select pressed: " + MousePos);
 
             // Make a vector that starts from the camera position and ends at the cursor... i think... gotta figure that out one sec
             Vector3 cursorDirection = MouseWorldPos - CameraTransform.position;
             Vector3 cursorDirectionExtended = cursorDirection * MaxSelectDistance;
 
-            // Debug.DrawRay(CameraTransform.position, cursorDirection, Color.green, 30f);
+            // Debug.DrawRay(CameraTransform.position, cursorDirection, Color.green, MaxSelectDistance);
 
+            // PROBLEM: Does not handle multiple hits. Might choose between multiple objects in the way of the ray.
             RaycastHit hit;
             bool didHit = Physics.Raycast(CameraTransform.position, cursorDirectionExtended, out hit, MaxSelectDistance, SelectableLayer);
-            // camera's transform, direction vector (calculated based on the cursor ugh), out hit, MaxDistance... check this, selectable layer mask
 
+            // If the RayCast hit a selectable layered object.
+            if (didHit)
+            {
+                Selectable selectable;
+                if (hit.collider.gameObject.TryGetComponent(out selectable))
+                {
+                    selectable.Selected();
+                }
+            }
 
-            if (didHit) Debug.Log(hit.collider.gameObject.name);
+            
         }
     }
 }
