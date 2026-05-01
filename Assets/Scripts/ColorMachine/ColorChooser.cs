@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class ColorChooser : MonoBehaviour
 {
-    
+    // listen to the selectable event
+    // on selected, cycle through the color
+
+    // need to be connected to some gameobject that swaps color
+
+    private void CycleColor()
+    {
+        // cycle color
+        // show cycled color
+    }
+
+    public Color GetColor()
+    {
+        return new Color();
+    }
 }
 
 
