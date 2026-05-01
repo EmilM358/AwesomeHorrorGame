@@ -13,6 +13,7 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private float MaxSelectDistance;
 
     private Vector3 MousePos;
+    private Vector3 MouseWorldPos;
 
     private void Awake()
     {
@@ -23,8 +24,15 @@ public class PlayerCursor : MonoBehaviour
     {
         // This is apparently the mouse pos in pixels and not world coords...
         // Gotta translate that
+        // There's a line for that in that website
         MousePos = Mouse.current.position.ReadValue();
-        Debug.Log("Update (MousePos): " + MousePos);
+        MousePos.z = Camera.main.nearClipPlane;
+        MouseWorldPos = Camera.main.ScreenToWorldPoint(MousePos);
+
+
+        //Debug.Log("Update MousePos: " + MousePos + " MouseWorldPos: " + MouseWorldPos);
+
+
     }
 
     private void OnEnable()
@@ -48,11 +56,17 @@ public class PlayerCursor : MonoBehaviour
             Debug.Log("Select pressed: " + MousePos);
 
             // Make a vector that starts from the camera position and ends at the cursor... i think... gotta figure that out one sec
+            Vector3 cursorDirection = MouseWorldPos - CameraTransform.position;
+            Vector3 cursorDirectionExtended = cursorDirection * MaxSelectDistance;
 
-            //RaycastHit hit;
-            //bool didHit = Physics.Raycast(CameraTransform.position, transform.forward, out hit, MaxSelectDistance, SelectableLayer);
+            // Debug.DrawRay(CameraTransform.position, cursorDirection, Color.green, 30f);
+
+            RaycastHit hit;
+            bool didHit = Physics.Raycast(CameraTransform.position, cursorDirectionExtended, out hit, MaxSelectDistance, SelectableLayer);
             // camera's transform, direction vector (calculated based on the cursor ugh), out hit, MaxDistance... check this, selectable layer mask
 
+
+            if (didHit) Debug.Log(hit.collider.gameObject.name);
         }
     }
 }
