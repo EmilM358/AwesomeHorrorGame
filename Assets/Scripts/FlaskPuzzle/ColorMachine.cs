@@ -58,8 +58,6 @@ public class ColorMachine : MonoBehaviour
                     CloneFlask.TryGetComponent(out NewFlask);
                     flaskSlot.SetFlask(NewFlask);
                 }
-
-                
             }
         }
     }
