@@ -50,7 +50,7 @@ public class PlayerCursor : MonoBehaviour
         if (context.performed)
         {
             
-            Debug.Log("Select pressed: " + MousePos);
+            //Debug.Log("Select pressed: " + MousePos);
 
             // Make a vector that starts from the camera position and ends at the cursor... i think... gotta figure that out one sec
             Vector3 cursorDirection = MouseWorldPos - CameraTransform.position;

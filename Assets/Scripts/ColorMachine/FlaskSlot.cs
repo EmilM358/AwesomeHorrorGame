@@ -8,6 +8,11 @@ public class FlaskSlot : MonoBehaviour
 {
     private Flask? flask;
 
+    public bool IsFlaskSlotAvailable()
+    {
+        return (flask == null) ? true : false;
+    }
+
     public bool SetFlask(Flask aFlask)
     {
         if (flask == null)
@@ -50,6 +55,22 @@ public class FlaskSlot : MonoBehaviour
 
             // I will consider whether the flask should be destroyed here, or in another script.
             Destroy(aFlask.gameObject);
+
+            return true;
+        }
+        else
+        {
+            // There is no flask in the FlaskSlot
+            return false;
+        }
+    }
+
+    public bool MixFlasks(Color colorToMix)
+    {
+        if (flask is Flask currFlask)
+        {
+            // Mix the incoming color into the flask
+            flask.ColorAddition(colorToMix);
 
             return true;
         }

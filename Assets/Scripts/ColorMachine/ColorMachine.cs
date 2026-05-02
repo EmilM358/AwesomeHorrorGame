@@ -19,7 +19,7 @@ public class ColorMachine : MonoBehaviour
 
     [SerializeField] private FlaskSlot flaskSlot;
 
-    [SerializeField] private UnityEvent OnButtonPressed;
+    [SerializeField] private UnityEvent OnMixPressed;
 
     private void Start()
     {
@@ -32,19 +32,34 @@ public class ColorMachine : MonoBehaviour
 
     public void TryPourFlask()
     {
-        OnButtonPressed?.Invoke();
+        OnMixPressed?.Invoke();
 
         if (CanPourFlask)
         {
             // get the colors from cc1 and cc2, then make a flask mixing those colors
             Color nextColor = cc1.GetColor() + cc2.GetColor();
 
-            // Ok so I'm not gonna instantiate a flask object, I'm going to link a prefab of a modeled flask that 
             if (FlaskOriginal == null) Debug.Log("A Flask could not be created out of the ColorMachine because the Flask prefab was not assigned.");
             else
             {
-                // try get flask component, add this color to it
-                // place it into the flask slotkjj
+                // If the FlaskSlot is occupied
+                if (!flaskSlot.IsFlaskSlotAvailable())
+                {
+                    // add the colour to the flasks colour
+                    flaskSlot.MixFlasks(nextColor);
+                }
+                else
+                {
+                    // Clone the Flask prefab, make its parent the flask slot gameobject.
+                    GameObject CloneFlask = Instantiate(FlaskOriginal, flaskSlot.transform);
+
+                    // Get the clone's flask component and pass it to the flask slot.
+                    Flask NewFlask;
+                    CloneFlask.TryGetComponent(out NewFlask);
+                    flaskSlot.SetFlask(NewFlask);
+                }
+
+                
             }
         }
     }

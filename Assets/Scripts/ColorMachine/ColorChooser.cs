@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ColorChooser : MonoBehaviour
 {
@@ -9,31 +10,24 @@ public class ColorChooser : MonoBehaviour
 
     // need to be connected to some gameobject that swaps color
 
-    private void CycleColor()
+    [SerializeField] private int ColorIndex = 0;
+    [SerializeField] private List<Color> colors;
+
+    [SerializeField] private UnityEvent <Color> OnColorChange;
+
+    public void CycleColor()
     {
-        // cycle color
-        // show cycled color
+        if (colors.Count == 0)
+        {
+            Debug.Log("A ColorChooser tried to cycle between available colors and display the next one, but it had no colors in its list.");
+            return;
+        }
+        ColorIndex = (ColorIndex + 1 >= colors.Count) ? 0: ColorIndex + 1;
+        OnColorChange?.Invoke(colors[ColorIndex]);
     }
 
     public Color GetColor()
     {
-        return new Color();
+        return colors[ColorIndex];
     }
 }
-
-
-/**
- *  this has a ui element for the color
- *  it has a ui element for the text
- *  it has ui element(s) for turning the wheel
- *  
- *  i guess they're not necessarily ui elements... they would be gameobjects to press...
- *  yeah they can't be ui elements, they've gotta be GOs
- *  
- *  so, i need to rethink this
- *  i need GOs that: (1) switch color, (2) display color, (3) pour flask
- *  
- *  
- *  
- *  
- */
