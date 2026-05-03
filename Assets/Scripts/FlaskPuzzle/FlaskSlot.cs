@@ -8,28 +8,26 @@ public class FlaskSlot : MonoBehaviour
 {
     private Flask? flask;
 
+    private void Update()
+    {
+        string flaskName;
+        if (flask == null) flaskName = "No flask";
+        else flaskName = flask.name;
+
+        // Debug to check if FlaskSlots are operating properly
+        Debug.Log("FlaskSlot: " + name + " Flask: " + flaskName);
+    }
+
     public bool IsFlaskSlotAvailable()
     {
         return (flask == null) ? true : false;
     }
 
-    public bool SetFlask(Flask aFlask)
-    {
-        if (flask == null)
-        {
-            flask = aFlask;
-            return true;
-        }
-        else
-        {
-            Debug.Log("A FlaskSlot was given a Flask but there was already a flask in the slot. Remove it first, or perform a color addition if that is the intended operation.");
-            return false;
-        }
-    }
-
     // Gotta test this out.
     public Flask? TryGrabFlask()
     {
+        Debug.Log("A Flask was grabbed from a FlaskSlot.");
+
         if (flask is Flask valueOfFlask)
         {
             Flask? temp = valueOfFlask;
@@ -39,7 +37,42 @@ public class FlaskSlot : MonoBehaviour
         else
         {
             return null;
-        }   
+        }
+    }
+    public Flask? TryPeekFlask()
+    {
+        Debug.Log("A Flask was peeked at from a FlaskSlot.");
+
+        if (flask is Flask valueOfFlask)
+        {
+            return valueOfFlask;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    // I should make a func that sets the flask if empty and mixes the flask otherwise, maybe
+    public bool SetFlask(Flask aFlask)
+    {
+        Debug.Log("A Flask was set into a FlaskSlot.");
+
+        if (flask == null)
+        {
+            flask = aFlask;
+            flask.SetFlaskSlot(this);
+
+            flask.transform.SetParent(transform);
+            flask.transform.position = transform.position;
+            
+            return true;
+        }
+        else
+        {
+            Debug.Log("A FlaskSlot was given a Flask but there was already a flask in the slot. Remove it first, or perform a color addition if that is the intended operation.");
+            return false;
+        }
     }
 
     public bool MixFlasks(Flask? aFlask)
@@ -79,5 +112,11 @@ public class FlaskSlot : MonoBehaviour
             // There is no flask in the FlaskSlot
             return false;
         }
+    }
+
+    public bool FlaskCompare(Flask compareTo)
+    {
+        if (compareTo == null || flask == null) return false;
+        return compareTo == flask;
     }
 }

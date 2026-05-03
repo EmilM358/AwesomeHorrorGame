@@ -6,22 +6,31 @@ using UnityEngine;
 public class Flask : MonoBehaviour
 {
     private Color color;
+    private FlaskSlot currentFlaskSlot;
 
     public static event Action<Flask> OnFlaskCreated;
+    public static event Action<Flask> OnFlaskDumped;
 
     public event Action OnPoured;
     public event Action OnMixed;
     public event Action OnDumped;
 
-    public event Action OnSelected;
+    public event Action <FlaskSlot> OnSelected;
     public event Action OnHover;
 
-    void Start()
+    private void OnEnable()
+    {
+        Flask.OnFlaskCreated?.Invoke(this);
+    }
+    private void OnDisable()
+    {
+        Flask.OnFlaskDumped?.Invoke(this);
+    }
+
+    private void Start()
     {
         color = Color.white;
         OnPoured?.Invoke();
-
-        OnFlaskCreated?.Invoke(this);
     }
     public void ColorAddition(float r, float g, float b, float a)
     {
@@ -40,6 +49,15 @@ public class Flask : MonoBehaviour
     {
         OnDumped?.Invoke();
         Destroy(gameObject);
+    }
+    public void SelectFlask()
+    {
+        Debug.Log("Select Flask func: Flask");
+        OnSelected?.Invoke(currentFlaskSlot);
+    }
+    public void SetFlaskSlot(FlaskSlot newSlot)
+    {
+        currentFlaskSlot = newSlot;
     }
 }
 

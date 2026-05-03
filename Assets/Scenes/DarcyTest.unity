@@ -381,6 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 269851321}
+  - component: {fileID: 269851322}
   m_Layer: 0
   m_Name: FlaskPuzzle
   m_TagString: Untagged
@@ -405,8 +406,25 @@ Transform:
   - {fileID: 1584133550}
   - {fileID: 1458825850}
   - {fileID: 1365769518}
+  - {fileID: 2031707508}
+  - {fileID: 1151464617}
+  - {fileID: 1322584821}
+  - {fileID: 1525526350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &269851322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269851320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147a0d37a9f34834fa0ab4dea89d74f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrabbedFlaskSlot: {fileID: 2031707509}
 --- !u!1 &435274549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1323,50 @@ PrefabInstance:
       addedObject: {fileID: 1289178775}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab920dc6e9ea304a9e67a373446f7c4, type: 3}
+--- !u!1 &1151464616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1151464617}
+  - component: {fileID: 1151464618}
+  m_Layer: 0
+  m_Name: Flask Slot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1151464617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151464616}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.748, y: 0.124, z: 0.096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 269851321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151464618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151464616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30795a2a4eac2bb479a8c9fcc17caf40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1289178774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1411,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30795a2a4eac2bb479a8c9fcc17caf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1322584820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322584821}
+  - component: {fileID: 1322584822}
+  m_Layer: 0
+  m_Name: Flask Slot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1322584821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322584820}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.291, y: 0.124, z: 0.096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 269851321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1322584822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322584820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30795a2a4eac2bb479a8c9fcc17caf40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1365769517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1467,9 @@ GameObject:
   - component: {fileID: 1365769521}
   - component: {fileID: 1365769520}
   - component: {fileID: 1365769519}
-  m_Layer: 0
+  - component: {fileID: 1365769523}
+  - component: {fileID: 1365769522}
+  m_Layer: 6
   m_Name: Flask Base (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1456,6 +1564,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365769517}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1365769522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365769517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40486b84f8755054c9ee13034819d9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flaskSlot: {fileID: 0}
+--- !u!114 &1365769523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365769517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc29557137f408a4cac7246037ab91e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1458825849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,7 +1604,9 @@ GameObject:
   - component: {fileID: 1458825853}
   - component: {fileID: 1458825852}
   - component: {fileID: 1458825851}
-  m_Layer: 0
+  - component: {fileID: 1458825855}
+  - component: {fileID: 1458825854}
+  m_Layer: 6
   m_Name: Flask Base (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1563,6 +1701,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458825849}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1458825854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458825849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40486b84f8755054c9ee13034819d9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flaskSlot: {fileID: 0}
+--- !u!114 &1458825855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458825849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc29557137f408a4cac7246037ab91e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1488254738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1804,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488254738}
   m_CullTransparentMesh: 1
+--- !u!1 &1525526349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525526350}
+  - component: {fileID: 1525526351}
+  m_Layer: 0
+  m_Name: Flask Slot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1525526350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525526349}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.155, y: 0.124, z: 0.096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 269851321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1525526351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525526349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30795a2a4eac2bb479a8c9fcc17caf40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1584133549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,7 +1860,9 @@ GameObject:
   - component: {fileID: 1584133553}
   - component: {fileID: 1584133552}
   - component: {fileID: 1584133551}
-  m_Layer: 0
+  - component: {fileID: 1584133555}
+  - component: {fileID: 1584133554}
+  m_Layer: 6
   m_Name: Flask Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1745,6 +1957,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584133549}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1584133554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584133549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40486b84f8755054c9ee13034819d9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flaskSlot: {fileID: 0}
+--- !u!114 &1584133555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584133549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc29557137f408a4cac7246037ab91e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1971201482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,6 +2077,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971201482}
   m_CullTransparentMesh: 1
+--- !u!1 &2031707507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2031707508}
+  - component: {fileID: 2031707509}
+  m_Layer: 0
+  m_Name: Grabbed Flask Slot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2031707508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031707507}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.31, y: 0.492, z: 0.356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 269851321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2031707509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031707507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30795a2a4eac2bb479a8c9fcc17caf40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -88,6 +88,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flask
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f055b1ef7a60ada4c817333933078ebc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -159,4 +164,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 342927830305298027}
+        m_TargetAssemblyTypeName: Flask, Assembly-CSharp
+        m_MethodName: SelectFlask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

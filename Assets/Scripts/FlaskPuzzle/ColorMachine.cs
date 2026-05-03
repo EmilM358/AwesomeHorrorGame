@@ -55,7 +55,12 @@ public class ColorMachine : MonoBehaviour
 
                     // Get the clone's flask component and pass it to the flask slot.
                     Flask NewFlask;
-                    CloneFlask.TryGetComponent(out NewFlask);
+                    if (!CloneFlask.TryGetComponent(out NewFlask))
+                    {
+                        Debug.Log("A flask GameObject was instantiated as a clone, but it did not have a Flask component.");
+                        Destroy(CloneFlask);
+                        return;
+                    }
                     flaskSlot.SetFlask(NewFlask);
                 }
             }
